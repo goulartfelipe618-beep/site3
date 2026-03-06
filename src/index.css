@@ -1,0 +1,157 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display&display=swap');
+
+@layer base {
+  :root {
+    --background: 35 30% 96%;
+    --foreground: 25 20% 18%;
+
+    --card: 35 25% 93%;
+    --card-foreground: 25 20% 18%;
+
+    --popover: 35 25% 93%;
+    --popover-foreground: 25 20% 18%;
+
+    --primary: 140 25% 28%;
+    --primary-foreground: 35 30% 96%;
+
+    --secondary: 30 30% 88%;
+    --secondary-foreground: 25 20% 25%;
+
+    --muted: 35 20% 90%;
+    --muted-foreground: 25 10% 45%;
+
+    --accent: 16 55% 52%;
+    --accent-foreground: 35 30% 96%;
+
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 35 18% 85%;
+    --input: 35 18% 85%;
+    --ring: 140 25% 28%;
+
+    --radius: 1rem;
+
+    --sidebar-background: 35 30% 96%;
+    --sidebar-foreground: 25 20% 18%;
+    --sidebar-primary: 140 25% 28%;
+    --sidebar-primary-foreground: 35 30% 96%;
+    --sidebar-accent: 30 30% 88%;
+    --sidebar-accent-foreground: 25 20% 25%;
+    --sidebar-border: 35 18% 85%;
+    --sidebar-ring: 140 25% 28%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'DM Serif Display', serif;
+    font-weight: 400;
+  }
+}
+
+/* Organic texture */
+.organic-bg {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23a0845c' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Leaf decoration */
+.leaf-divider {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    hsl(140, 25%, 28%, 0.15),
+    transparent
+  );
+  height: 1px;
+}
+
+/* Soft card */
+.eco-card {
+  background: hsl(35, 25%, 93%);
+  border: 1px solid hsl(35, 18%, 85%);
+  border-radius: var(--radius);
+  box-shadow: 0 4px 20px hsla(25, 20%, 18%, 0.06);
+  transition: all 0.4s ease;
+}
+
+.eco-card:hover {
+  box-shadow: 0 8px 30px hsla(25, 20%, 18%, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Eco button */
+.eco-btn {
+  background: hsl(16, 55%, 52%);
+  color: hsl(35, 30%, 96%);
+  font-weight: 600;
+  border-radius: 9999px;
+  padding: 14px 32px;
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px hsla(16, 55%, 52%, 0.25);
+}
+
+.eco-btn:hover {
+  background: hsl(16, 55%, 46%);
+  box-shadow: 0 6px 24px hsla(16, 55%, 52%, 0.35);
+  transform: translateY(-1px);
+}
+
+.eco-btn-outline {
+  background: transparent;
+  color: hsl(16, 55%, 52%);
+  border: 2px solid hsl(16, 55%, 52%);
+  border-radius: 9999px;
+  padding: 12px 32px;
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  transition: all 0.3s ease;
+}
+
+.eco-btn-outline:hover {
+  background: hsl(16, 55%, 52%, 0.08);
+}
+
+/* Eco input */
+.eco-input {
+  background: hsl(35, 30%, 96%);
+  border: 2px solid hsl(35, 18%, 85%);
+  border-radius: var(--radius);
+  padding: 14px 18px;
+  font-size: 0.875rem;
+  transition: all 0.3s ease;
+  width: 100%;
+  color: hsl(25, 20%, 18%);
+}
+
+.eco-input::placeholder {
+  color: hsl(25, 10%, 55%);
+}
+
+.eco-input:focus {
+  outline: none;
+  border-color: hsl(140, 25%, 38%);
+  box-shadow: 0 0 0 3px hsl(140, 25%, 28%, 0.1);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: hsl(35, 30%, 96%); }
+::-webkit-scrollbar-thumb { background: hsl(35, 18%, 78%); border-radius: 3px; }
